@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclame Aqui - Resolva suas reclamações</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A868;
+            --primary-dark: #008054;
+            --primary-light: #E8F5F0;
+            --secondary: #1A365D;
+            --accent: #FF6B35;
+            --text: #2D3748;
+            --text-light: #718096;
+            --background: #F7FAFC;
+            --white: #FFFFFF;
+            --gray-light: #EDF2F7;
+            --border: #E2E8F0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 45px 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 168, 104, 0.1);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #00A868 0%, #008054 100%);
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero {
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: var(--radius);
+            font-weight: 600;
+        }
+
+        .btn-hero-primary {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-hero-primary:hover {
+            background-color: var(--gray-light);
+        }
+
+        .btn-hero-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-hero-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Complaint Form */
+        .complaint-section {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+        }
+
+        .form-steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 120px;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .step.completed .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .step-line {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--border);
+            z-index: 0;
+        }
+
+        .step:last-child .step-line {
+            display: none;
+        }
+
+        .step.active .step-line {
+            background-color: var(--primary);
+        }
+
+        .step.completed .step-line {
+            background-color: var(--primary);
+        }
+
+        .step-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .step.active .step-label {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .form-content {
+            margin-bottom: 30px;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 168, 104, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .radio-option input, .checkbox-option input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .problem-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .problem-option {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .problem-option:hover {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        .problem-option.selected {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+        }
+
+        .btn-back:hover {
+            background-color: var(--gray-light);
+        }
+
+        .btn-next, .btn-publish {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+        }
+
+        .btn-next:hover, .btn-publish:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-next:disabled {
+            background-color: var(--border);
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #CBD5E0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .partnership {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partnership p {
+            font-size: 16px;
+            color: #CBD5E0;
+        }
+
+        .partnership img {
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .partnership img:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #CBD5E0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                max-width: 100%;
+                margin: 10px 0;
+                order: 3;
+                width: 100%;
+            }
+            
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-hero {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .complaint-section {
+                padding: 24px;
+            }
+            
+            .form-steps {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .step-line {
+                display: none;
+            }
+            
+            .problem-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-footer {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .btn-back, .btn-next, .btn-publish {
+                width: 100%;
+            }
+            
+            .partnership {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://images.seeklogo.com/logo-png/61/1/reclameaqui-logo-png_seeklogo-613209.png" alt="Reclame Aqui">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquise por uma empresa...">
+                <button>🔍</button>
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-outline">Entrar</a>
+                <a href="#" class="btn btn-primary">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Resolva suas reclamações de forma rápida e fácil</h1>
+                <p>Milhões de consumidores já resolveram seus problemas através da nossa plataforma. Faça como eles e garanta seus direitos!</p>
+                <div class="hero-buttons">
+                    <a href="#complaint-form" class="btn btn-hero btn-hero-primary">Fazer uma reclamação</a>
+                    <a href="#" class="btn btn-hero btn-hero-secondary">Pesquisar empresa</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://blog.queromeusdireitos.com/wp-content/uploads/2023/12/og-leitura-reclamacao-e1714073182238.png" alt="Pessoa resolvendo problemas de consumo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Como funciona</h2>
+                <p class="section-subtitle">Uma plataforma simples e eficiente para resolver seus problemas</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Faça sua reclamação</h3>
+                    <p>Descreva seu problema de forma clara e objetiva para a empresa</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 16V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>A empresa responde</h3>
+                    <p>A empresa tem a oportunidade de resolver seu problema diretamente</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Problema resolvido</h3>
+                    <p>Você avalia a solução e compartilha sua experiência com outros consumidores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Form -->
+    <section class="complaint-section" id="complaint-form">
+        <div class="form-header">
+            <h2 id="form-title">Faça sua reclamação</h2>
+            <p id="form-subtitle">Preencha as informações abaixo para registrar sua reclamação</p>
+        </div>
+        
+        <div class="form-steps">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-line"></div>
+                <div class="step-label">Informações</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-line"></div>
+                <div class="step-label">Detalhes</div>
+            </div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Finalizar</div>
+            </div>
+        </div>
+        
+        <div class="form-content">
+            <!-- Step 1 -->
+            <div class="form-step active" id="step-1">
+                <div class="form-group">
+                    <label>Qual o motivo da sua reclamação?</label>
+                    <input type="text" class="form-control" placeholder="Descreva o motivo da sua reclamação">
+                </div>
+                
+                <div class="form-group">
+                    <label>Qual a sua sugestão de solução para o problema?</label>
+                    <input type="text" class="form-control" placeholder="Descreva sua sugestão">
+                </div>
+                
+                <div class="form-group">
+                    <label>Deseja falar com nosso time sobre possível negociação?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="negotiation" value="sim">
+                            Sim
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="negotiation" value="nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Você é o titular da compra?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="titular" value="sim" checked>
+                            Sim
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="titular" value="nao">
+                            Não
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="form-step" id="step-2">
+                <div class="form-group">
+                    <label>Sua reclamação</label>
+                    <textarea class="form-control" placeholder="Escreva ou grave seu problema aqui"></textarea>
+                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Não precisa colocar dados pessoais. Enviaremos a empresa justo com a reclamação.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Informe o número que a empresa poderá entrar em contato. De preferência WhatsApp.</label>
+                    <input type="tel" class="form-control" placeholder="(00) 00000 0000">
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox">
+                        Aceito receber notificações no WhatsApp
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label>Anexar arquivos ou evidências</label>
+                    <input type="file" class="form-control">
+                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Opcional. Apenas a empresa poderá visualizar os números de contato e os anexos.</p>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="form-step" id="step-3">
+                <div class="form-group">
+                    <label>Título *</label>
+                    <input type="text" class="form-control" placeholder="Escreva o título aqui">
+                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Esse campo é obrigatório</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Qual o problema?</label>
+                    <div class="problem-options">
+                        <div class="problem-option">Cobrança indevida</div>
+                        <div class="problem-option">Não consigo cancelar</div>
+                        <div class="problem-option">Qualidade do serviço</div>
+                        <div class="problem-option">Mau Atendimento</div>
+                        <div class="problem-option">Mau atendimento do prestador</div>
+                        <div class="problem-option">Propaganda enganosa</div>
+                        <div class="problem-option">Equipamentos quebrados</div>
+                        <div class="problem-option">Cobrança duplicada</div>
+                        <div class="problem-option">Estorno do valor pago</div>
+                        <div class="problem-option">Baixa Qualidade</div>
+                        <div class="problem-option">Divergência de valores</div>
+                        <div class="problem-option">Forma de pagamento indisponível</div>
+                        <div class="problem-option">Roubo-Furto</div>
+                        <div class="problem-option">Atraso na entrega</div>
+                        <div class="problem-option">Banheiro sem água</div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 14px; margin-top: 20px; color: var(--text-light);">Complete as etapas obrigatórias para postar a reclamação.</p>
+            </div>
+        </div>
+        
+        <div class="form-footer">
+            <button class="btn btn-back" id="btn-back">Voltar</button>
+            <button class="btn btn-next" id="btn-next">Próximo passo</button>
+            <button class="btn btn-publish" id="btn-publish" style="display: none;">Publicar reclamação 😊</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Para você</h3>
+                    <ul>
+                        <li><a href="#">Faça uma reclamação</a></li>
+                        <li><a href="#">Minhas Reclamações</a></li>
+                        <li><a href="#">Detector de Site Confiável</a></li>
+                        <li><a href="#">Compare</a></li>
+                        <li><a href="#">Descontos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Para empresas</h3>
+                    <ul>
+                        <li><a href="#">Reclame AQUI para empresas</a></li>
+                        <li><a href="#">Soluções para empresas</a></li>
+                        <li><a href="#">RA Brand Page</a></li>
+                        <li><a href="#">RA Reviews</a></li>
+                        <li><a href="#">RA HugMe</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Institucional</h3>
+                    <ul>
+                        <li><a href="#">Sobre o Reclame AQUI</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Trabalhe conosco</a></li>
+                        <li><a href="#">Prêmio RA1000</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ajuda</h3>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">LGPD</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="partnership">
+                <p>Em parceria com o Procon</p>
+                <img src="https://images.seeklogo.com/logo-png/26/1/procon-logo-png_seeklogo-265259.png" alt="Procon">
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Reclame AQUI - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            const formSteps = document.querySelectorAll('.form-step');
+            const btnNext = document.getElementById('btn-next');
+            const btnBack = document.getElementById('btn-back');
+            const btnPublish = document.getElementById('btn-publish');
+            const formTitle = document.getElementById('form-title');
+            const formSubtitle = document.getElementById('form-subtitle');
+            const problemOptions = document.querySelectorAll('.problem-option');
+            
+            let currentStep = 1;
+            
+            // Update form titles based on step
+            function updateFormTitles() {
+                if (currentStep === 1) {
+                    formTitle.textContent = 'Passo 1 de 3';
+                    formSubtitle.textContent = 'A empresa precisa de algumas informações. Ajude a empresa disponibilizando informações relacionadas ao seu problema.';
+                } else if (currentStep === 2) {
+                    formTitle.textContent = 'Faça sua reclamação';
+                    formSubtitle.textContent = 'Preencha os detalhes da sua reclamação';
+                } else if (currentStep === 3) {
+                    formTitle.textContent = 'Complete os campos antes de publicar';
+                    formSubtitle.textContent = 'Finalize sua reclamação';
+                }
+            }
+            
+            // Update step indicators
+            function updateStepIndicators() {
+                steps.forEach(step => {
+                    const stepNumber = parseInt(step.getAttribute('data-step'));
+                    if (stepNumber === currentStep) {
+                        step.classList.add('active');
+                        step.classList.remove('completed');
+                    } else if (stepNumber < currentStep) {
+                        step.classList.remove('active');
+                        step.classList.add('completed');
+                    } else {
+                        step.classList.remove('active');
+                        step.classList.remove('completed');
+                    }
+                });
+                
+                formSteps.forEach(step => {
+                    const stepId = step.id.split('-')[1];
+                    if (parseInt(stepId) === currentStep) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+                
+                // Update button visibility
+                if (currentStep === 1) {
+                    btnBack.style.display = 'none';
+                    btnNext.style.display = 'inline-block';
+                    btnPublish.style.display = 'none';
+                } else if (currentStep === 2) {
+                    btnBack.style.display = 'inline-block';
+                    btnNext.style.display = 'inline-block';
+                    btnPublish.style.display = 'none';
+                } else if (currentStep === 3) {
+                    btnBack.style.display = 'inline-block';
+                    btnNext.style.display = 'none';
+                    btnPublish.style.display = 'inline-block';
+                }
+                
+                updateFormTitles();
+            }
+            
+            // Next button click
+            btnNext.addEventListener('click', function() {
+                if (currentStep < 3) {
+                    currentStep++;
+                    updateStepIndicators();
+                }
+            });
+            
+            // Back button click
+            btnBack.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStepIndicators();
+                }
+            });
+            
+            // Publish button click
+            btnPublish.addEventListener('click', function() {
+                alert('Reclamação publicada com sucesso!');
+                // Here you would normally submit the form
+            });
+            
+            // Problem option selection
+            problemOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    problemOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Initialize
+            updateStepIndicators();
+        });
+    </script>
+</body>
+</html>
