@@ -590,6 +590,18 @@
             color: #CBD5E0;
         }
 
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary);
+            color: var(--primary-dark);
+            padding: 16px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
@@ -754,130 +766,137 @@
             <p id="form-subtitle">Preencha as informações abaixo para registrar sua reclamação</p>
         </div>
         
-        <div class="form-steps">
-            <div class="step active" data-step="1">
-                <div class="step-number">1</div>
-                <div class="step-line"></div>
-                <div class="step-label">Informações</div>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-number">2</div>
-                <div class="step-line"></div>
-                <div class="step-label">Detalhes</div>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-number">3</div>
-                <div class="step-label">Finalizar</div>
-            </div>
+        <div class="success-message" id="success-message">
+            Sua reclamação foi enviada com sucesso! Entraremos em contato em breve.
         </div>
         
-        <div class="form-content">
-            <!-- Step 1 -->
-            <div class="form-step active" id="step-1">
-                <div class="form-group">
-                    <label>Qual o motivo da sua reclamação?</label>
-                    <input type="text" class="form-control" placeholder="Descreva o motivo da sua reclamação">
+        <form id="basin-form" action="https://usebasin.com/f/79e51eafd4a3" method="POST">
+            <div class="form-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-line"></div>
+                    <div class="step-label">Informações</div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Qual a sua sugestão de solução para o problema?</label>
-                    <input type="text" class="form-control" placeholder="Descreva sua sugestão">
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-line"></div>
+                    <div class="step-label">Detalhes</div>
                 </div>
-                
-                <div class="form-group">
-                    <label>Deseja falar com nosso time sobre possível negociação?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="negotiation" value="sim">
-                            Sim
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="negotiation" value="nao">
-                            Não
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Você é o titular da compra?</label>
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="titular" value="sim" checked>
-                            Sim
-                        </label>
-                        <label class="radio-option">
-                            <input type="radio" name="titular" value="nao">
-                            Não
-                        </label>
-                    </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Finalizar</div>
                 </div>
             </div>
             
-            <!-- Step 2 -->
-            <div class="form-step" id="step-2">
-                <div class="form-group">
-                    <label>Sua reclamação</label>
-                    <textarea class="form-control" placeholder="Escreva ou grave seu problema aqui"></textarea>
-                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Não precisa colocar dados pessoais. Enviaremos a empresa justo com a reclamação.</p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Informe o número que a empresa poderá entrar em contato. De preferência WhatsApp.</label>
-                    <input type="tel" class="form-control" placeholder="(00) 00000 0000">
-                </div>
-                
-                <div class="form-group">
-                    <label class="checkbox-option">
-                        <input type="checkbox">
-                        Aceito receber notificações no WhatsApp
-                    </label>
-                </div>
-                
-                <div class="form-group">
-                    <label>Anexar arquivos ou evidências</label>
-                    <input type="file" class="form-control">
-                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Opcional. Apenas a empresa poderá visualizar os números de contato e os anexos.</p>
-                </div>
-            </div>
-            
-            <!-- Step 3 -->
-            <div class="form-step" id="step-3">
-                <div class="form-group">
-                    <label>Título *</label>
-                    <input type="text" class="form-control" placeholder="Escreva o título aqui">
-                    <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Esse campo é obrigatório</p>
-                </div>
-                
-                <div class="form-group">
-                    <label>Qual o problema?</label>
-                    <div class="problem-options">
-                        <div class="problem-option">Cobrança indevida</div>
-                        <div class="problem-option">Não consigo cancelar</div>
-                        <div class="problem-option">Qualidade do serviço</div>
-                        <div class="problem-option">Mau Atendimento</div>
-                        <div class="problem-option">Mau atendimento do prestador</div>
-                        <div class="problem-option">Propaganda enganosa</div>
-                        <div class="problem-option">Equipamentos quebrados</div>
-                        <div class="problem-option">Cobrança duplicada</div>
-                        <div class="problem-option">Estorno do valor pago</div>
-                        <div class="problem-option">Baixa Qualidade</div>
-                        <div class="problem-option">Divergência de valores</div>
-                        <div class="problem-option">Forma de pagamento indisponível</div>
-                        <div class="problem-option">Roubo-Furto</div>
-                        <div class="problem-option">Atraso na entrega</div>
-                        <div class="problem-option">Banheiro sem água</div>
+            <div class="form-content">
+                <!-- Step 1 -->
+                <div class="form-step active" id="step-1">
+                    <div class="form-group">
+                        <label>Qual o motivo da sua reclamação?</label>
+                        <input type="text" class="form-control" name="motivo" placeholder="Descreva o motivo da sua reclamação">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Qual a sua sugestão de solução para o problema?</label>
+                        <input type="text" class="form-control" name="sugestao" placeholder="Descreva sua sugestão">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Deseja falar com nosso time sobre possível negociação?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="negotiation" value="sim">
+                                Sim
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="negotiation" value="nao">
+                                Não
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Você é o titular da compra?</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="titular" value="sim" checked>
+                                Sim
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="titular" value="nao">
+                                Não
+                            </label>
+                        </div>
                     </div>
                 </div>
                 
-                <p style="font-size: 14px; margin-top: 20px; color: var(--text-light);">Complete as etapas obrigatórias para postar a reclamação.</p>
+                <!-- Step 2 -->
+                <div class="form-step" id="step-2">
+                    <div class="form-group">
+                        <label>Sua reclamação</label>
+                        <textarea class="form-control" name="reclamacao" placeholder="Escreva ou grave seu problema aqui"></textarea>
+                        <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Não precisa colocar dados pessoais. Enviaremos a empresa justo com a reclamação.</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Informe o número que a empresa poderá entrar em contato. De preferência WhatsApp.</label>
+                        <input type="tel" class="form-control" name="telefone" placeholder="(00) 00000 0000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="whatsapp">
+                            Aceito receber notificações no WhatsApp
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Anexar arquivos ou evidências</label>
+                        <input type="file" class="form-control" name="anexo">
+                        <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Opcional. Apenas a empresa poderá visualizar os números de contato e os anexos.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="form-step" id="step-3">
+                    <div class="form-group">
+                        <label>Título *</label>
+                        <input type="text" class="form-control" name="titulo" placeholder="Escreva o título aqui">
+                        <p style="font-size: 14px; margin-top: 8px; color: var(--text-light);">Esse campo é obrigatório</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Qual o problema?</label>
+                        <div class="problem-options">
+                            <div class="problem-option">Cobrança indevida</div>
+                            <div class="problem-option">Não consigo cancelar</div>
+                            <div class="problem-option">Qualidade do serviço</div>
+                            <div class="problem-option">Mau Atendimento</div>
+                            <div class="problem-option">Mau atendimento do prestador</div>
+                            <div class="problem-option">Propaganda enganosa</div>
+                            <div class="problem-option">Equipamentos quebrados</div>
+                            <div class="problem-option">Cobrança duplicada</div>
+                            <div class="problem-option">Estorno do valor pago</div>
+                            <div class="problem-option">Baixa Qualidade</div>
+                            <div class="problem-option">Divergência de valores</div>
+                            <div class="problem-option">Forma de pagamento indisponível</div>
+                            <div class="problem-option">Roubo-Furto</div>
+                            <div class="problem-option">Atraso na entrega</div>
+                            <div class="problem-option">Banheiro sem água</div>
+                        </div>
+                        <input type="hidden" name="problema" id="problema-selecionado">
+                    </div>
+                    
+                    <p style="font-size: 14px; margin-top: 20px; color: var(--text-light);">Complete as etapas obrigatórias para postar a reclamação.</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="form-footer">
-            <button class="btn btn-back" id="btn-back">Voltar</button>
-            <button class="btn btn-next" id="btn-next">Próximo passo</button>
-            <button class="btn btn-publish" id="btn-publish" style="display: none;">Publicar reclamação 😊</button>
-        </div>
+            
+            <div class="form-footer">
+                <button type="button" class="btn btn-back" id="btn-back">Voltar</button>
+                <button type="button" class="btn btn-next" id="btn-next">Próximo passo</button>
+                <button type="submit" class="btn btn-publish" id="btn-publish" style="display: none;">Publicar reclamação 😊</button>
+            </div>
+        </form>
     </section>
 
     <!-- Footer -->
@@ -950,6 +969,9 @@
             const formTitle = document.getElementById('form-title');
             const formSubtitle = document.getElementById('form-subtitle');
             const problemOptions = document.querySelectorAll('.problem-option');
+            const basinForm = document.getElementById('basin-form');
+            const successMessage = document.getElementById('success-message');
+            const problemaSelecionado = document.getElementById('problema-selecionado');
             
             let currentStep = 1;
             
@@ -1026,10 +1048,44 @@
                 }
             });
             
-            // Publish button click
-            btnPublish.addEventListener('click', function() {
-                alert('Reclamação publicada com sucesso!');
-                // Here you would normally submit the form
+            // Form submission
+            basinForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                btnPublish.disabled = true;
+                btnPublish.textContent = 'Enviando...';
+                
+                // Submit form to Basin
+                fetch(this.action, {
+                    method: 'POST',
+                    body: new FormData(this)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        basinForm.reset();
+                        
+                        // Reset form steps
+                        currentStep = 1;
+                        updateStepIndicators();
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        alert('Ocorreu um erro ao enviar sua reclamação. Tente novamente.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ocorreu um erro ao enviar sua reclamação. Tente novamente.');
+                })
+                .finally(() => {
+                    // Reset button state
+                    btnPublish.disabled = false;
+                    btnPublish.textContent = 'Publicar reclamação 😊';
+                });
             });
             
             // Problem option selection
@@ -1037,6 +1093,7 @@
                 option.addEventListener('click', function() {
                     problemOptions.forEach(opt => opt.classList.remove('selected'));
                     this.classList.add('selected');
+                    problemaSelecionado.value = this.textContent;
                 });
             });
             
